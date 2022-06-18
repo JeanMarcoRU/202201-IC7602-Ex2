@@ -1,12 +1,21 @@
 # Jean Marco Rojas - 2015040717
 
 1.
+(Código inspirado del diagrama del libro. Pag 543).
 ![image](https://user-images.githubusercontent.com/15478613/174422878-112d33e1-92ff-4fcd-a64e-e01a01ad20cb.png)
 
 ![image](https://user-images.githubusercontent.com/15478613/174423799-500daa34-1c65-4b08-8158-f445ada297fa.png)
 
+![image](https://user-images.githubusercontent.com/15478613/174423864-44d81435-bbc7-4e43-ba6f-24635e2fd882.png)
 
-(SEC. 6.3.2, Pág 515-522, Tanenbaum, A. Computer Networks. 4ta edición).
+![image](https://user-images.githubusercontent.com/15478613/174423883-09308a69-6925-41d5-91e6-cae16beb92d9.png)
+
+Enviamos el mensaje que recibe de parámetro y poner un temporizador, intenta recibir un paquete, con la función reciveudp, si todo ok, cancela el temporizador, ya que se inicia antes de solicitar una respuesta, luego preguntamos si es de tipo CRC invalido para retransmitir, si no es de ese tipo, revisa el CRC, y mientras ese paquete que llego sea inválido, lo envía de nuevo, si esta bueno lo retorna si no lo puede retornar es por que el mensaje nunca llegó (se puede revisar el temporizador), luego preguntamos si quedan intentos por transmitir hacemos una llamada recursiva y si no quedan intentos devolvemos error (-1).
+En la función de solicitar coneccion del cliente primero se envía el mensaje de solicitud de conexión al servidor, de esa solicitud se toma el número de secuencia y se envía y se espera una respuesta válida y de la respuesta se toma de nuevo el número de secuencia, después se crea el segmento de la confirmación y se envía al server, entonces la coneccion ya está establecida para el cliente y se retorna la secuencia y si no se pudo establecer conexión con el server se devuelve error (-1)
+En la función de conectar al server, según el libro (pág 518) se busca por un espacio en la tabla de conexiones disponibles y cuando la encuentra (si es que existe) toma el número de secuencia del mensaje que se recibe y crea una respuesta hacia el cliente (con el ack), se envía al cliente y espera una respuesta que tiene que ser de éxito o rechazo.
+asumimos la existencia de la función create_sec crea el mensaje (segmento).
+(SEC. 6.3, Pág 515-543, Tanenbaum, A. Computer Networks. 4ta edición).
+
 
 2.
 a)
