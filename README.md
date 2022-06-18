@@ -1,6 +1,10 @@
 # Jean Marco Rojas - 2015040717
 
 1.
+![image](https://user-images.githubusercontent.com/15478613/174422878-112d33e1-92ff-4fcd-a64e-e01a01ad20cb.png)
+
+![image](https://user-images.githubusercontent.com/15478613/174423799-500daa34-1c65-4b08-8158-f445ada297fa.png)
+
 
 (SEC. 6.3.2, Pág 515-522, Tanenbaum, A. Computer Networks. 4ta edición).
 
